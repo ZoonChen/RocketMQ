@@ -28,6 +28,7 @@ import java.util.Collections;
 
 /**
  * Filter data of consumer.
+ * 消费过滤器中的数据
  */
 public class ConsumerFilterData {
 
@@ -54,6 +55,7 @@ public class ConsumerFilterData {
 
     /**
      * Check this filter data has been used to calculate bit map when msg was stored in server.
+     * 当消息已经在服务中被存储时，检查当前已经被使用的过滤器数据去重新计算方法bitmap
      */
     public boolean isMsgInLive(long msgStoreTime) {
         return msgStoreTime > getBornTime();

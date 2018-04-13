@@ -24,6 +24,7 @@ import java.util.Map;
 
 /**
  * Evaluation context from message.
+ * 从信息中评估上下文
  */
 public class MessageEvaluationContext implements EvaluationContext {
 

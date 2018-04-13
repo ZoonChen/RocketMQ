@@ -18,10 +18,11 @@ package org.apache.rocketmq.broker.pagecache;
 
 import io.netty.channel.FileRegion;
 import io.netty.util.AbstractReferenceCounted;
+import org.apache.rocketmq.store.SelectMappedBufferResult;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
-import org.apache.rocketmq.store.SelectMappedBufferResult;
 
 public class OneMessageTransfer extends AbstractReferenceCounted implements FileRegion {
     private final ByteBuffer byteBufferHeader;
@@ -29,6 +30,7 @@ public class OneMessageTransfer extends AbstractReferenceCounted implements File
 
     /**
      * Bytes which were transferred already.
+     * 已经被传输的字节
      */
     private long transferred;
 

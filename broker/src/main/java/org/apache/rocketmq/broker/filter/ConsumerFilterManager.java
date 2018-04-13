@@ -17,14 +17,13 @@
 
 package org.apache.rocketmq.broker.filter;
 
-import java.util.concurrent.ConcurrentMap;
 import org.apache.rocketmq.broker.BrokerController;
 import org.apache.rocketmq.broker.BrokerPathConfigHelper;
 import org.apache.rocketmq.common.ConfigManager;
 import org.apache.rocketmq.common.constant.LoggerName;
+import org.apache.rocketmq.common.filter.ExpressionType;
 import org.apache.rocketmq.common.protocol.heartbeat.SubscriptionData;
 import org.apache.rocketmq.filter.FilterFactory;
-import org.apache.rocketmq.common.filter.ExpressionType;
 import org.apache.rocketmq.filter.util.BloomFilter;
 import org.apache.rocketmq.filter.util.BloomFilterData;
 import org.apache.rocketmq.remoting.protocol.RemotingSerializable;
@@ -36,9 +35,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * Consumer filter data manager.Just manage the consumers use expression filter.
+ * 消费者过滤器数据管理器。只管理消费者使用的表达式过滤器
  */
 public class ConsumerFilterManager extends ConfigManager {
 
@@ -71,7 +72,7 @@ public class ConsumerFilterManager extends ConfigManager {
 
     /**
      * Build consumer filter data.Be care, bloom filter data is not included.
-     *
+     * 构建消费者过滤器数据。在这里请注意，bloom 过滤器数据不被包含在内
      * @return maybe null
      */
     public static ConsumerFilterData build(final String topic, final String consumerGroup,

@@ -28,7 +28,9 @@ import java.util.Map;
 
 /**
  * Support filter to retry topic.
+ * 过滤器支持topic 重试机制
  * <br>It will decode properties first in order to get real topic.
+ * 过滤器的重试机制将解码属性首先是为了获取真正的topic
  */
 public class ExpressionForRetryMessageFilter extends ExpressionMessageFilter {
     public ExpressionForRetryMessageFilter(SubscriptionData subscriptionData, ConsumerFilterData consumerFilterData,
